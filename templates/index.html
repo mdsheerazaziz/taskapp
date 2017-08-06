@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Tasks</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .list {
+            width: 25em;
+            margin: 0 auto;
+        }
+
+        .padding-right-2 {
+            padding-right: 2em;
+        }
+
+        .padding-right-1 {
+            padding-right: 0.5em;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            vertical-align: top;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+<h1 class="center">Your Tasks</h1>
+<div class="center">
+    <span class="padding-right-1"><a href="/add-task">Add New Task</a></span>
+    <a href="/logout">Logout</a>
+</div>
+<br/>
+<div>
+    <table class="list">
+        <tr class="align-left">
+            <th class="padding-right-2">
+                Task Name
+            </th>
+            <th class="padding-right-2">
+                Task Description
+            </th>
+            <th class="padding-right-2">
+                Actions
+            </th>
+        </tr>
+        {% for task in tasks %}
+            <tr class="align-left">
+                <td>{{ task.name }}</td>
+                <td>{{ task.description }}</td>
+                <td>
+                        <span class="padding-right-1">
+                            <a href="/edit-task?id={{ task.id }}">Edit</a>
+                        </span>
+                    <span>
+                            <a href="/delete-task?id={{ task.id }}">Delete</a>
+                        </span>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

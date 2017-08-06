@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Task</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .form {
+            width: 20em;
+            margin: 0 auto;
+        }
+
+        .form-controls-wrapper {
+            margin: 1em;
+        }
+
+        .form-controls {
+            width: 100%;
+            height: 2em;
+        }
+        .form-controls-text-area{
+            width: 100%;
+            height: 10em;
+        }
+    </style>
+</head>
+<body>
+<h2 class="center">Create your new task</h2>
+<div class="form">
+    <form action="/create-task" method="post">
+        {% csrf_token %}
+        <div class="form-controls-wrapper">
+            Task Name
+            <input class="form-controls" type="text" name="task_name" placeholder="Task Name" required/>
+        </div>
+        <div class="form-controls-wrapper">
+            Task Description
+            <textarea class="form-controls-text-area" maxlength="500" rows="8" type="text" name="task_description"
+                      placeholder="Task Description" required></textarea>
+        </div>
+        <div class="form-controls-wrapper center">
+            <input type="submit" name="Create" value="Create">
+        </div>
+    </form>
+</div>
+</body>
+</html>
