@@ -30,7 +30,7 @@ def new_task(task, user):
 def save_modified_task(modified_task, user):
     try:
         task = Task.objects.get(id=modified_task.get("id"), user=user)
-        task.name = modified_task.get("task_name")
+        task.task = modified_task.get("task_name")
         task.task_description = modified_task.get("task_description")
         return task.save()
     except ObjectDoesNotExist:
