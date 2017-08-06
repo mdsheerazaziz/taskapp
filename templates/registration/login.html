@@ -9,15 +9,15 @@
         }
     </style>
 </head>
-<body>
+<body class="center">
 
 {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 {% block content %}
     <div >
-        <h2 class="center">Login</h2>
-        <div class="center">
+        <h2>Login</h2>
+        <div>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
