@@ -32,7 +32,6 @@ $ python manage.py runserver
 
 ## Demo
 Hosted on heroku at https://rocky-island-61052.herokuapp.com/login/
-Users:
   1. Username: demouser, Password: demouser
   2. Username: demouser1, Password: demouser1
 
